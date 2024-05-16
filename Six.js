@@ -42,13 +42,15 @@ console.log(copyObj.area());
 
 // Создайте функцию которая принимает произвольное количество параметров и возвращает их сумму.
 
-// const objAdd = {
-//   кошелек: 3500,
-//   машина: 5000,
-//   часы: 2000,
-//   телевизор: 50000
-// }
-
-const newFunc = () => {
-  
+function sum(...args) {
+  return args.reduce((total, num) => total 
+  + num, 0 );
 }
+
+console.log(sum(2, 6, 9, 22, 47));
+
+// Получить узел html
+
+let html = document.documentElement;
+
+console.log(html);
