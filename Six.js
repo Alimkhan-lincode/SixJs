@@ -149,3 +149,48 @@ const setTimePromimese = () => {
 setTimePromimese().then((result) => {
   console.log(result);
 });
+
+
+// 1. Создайте два Promise, которые используют функцию `setTimeout`.
+// 2. Задайте таймер на 1 и 3 секунды соответственно.
+// 3. Используйте Promise.all, чтобы выполнить оба Promise одновременно.
+// 4. Выведите в консоль результаты выполнения обоих Promise.
+
+const onePromiseAll = new Promise(
+  resolve => setTimeout(() =>
+  resolve("Одновременно"),
+  3000))
+
+const twoPromiseAll = new Promise(
+  resolve => setTimeout(() =>
+  resolve("С первым промисом"),
+  5000))
+
+  Promise.all([onePromiseAll, twoPromiseAll])
+  .then(([response, value]) => {
+    console.log(response);
+    // onePromiseAll
+    console.log(value);
+    // twoPromiseAll
+  })
+
+// 1. Создайте два Promise, которые используют функцию `setTimeout`.
+// 2. Задайте таймер на 1 и 3 секунды соответственно.
+// 3. Используйте Promise.race, чтобы выполнить оба Promise и получить результат выполнения самого первого завершенного Promise.
+// 4. Выведите в консоль результат.
+
+const oneRacePromis = new Promise(resolve =>
+  setTimeout(() =>
+  resolve("Выведит первым"),
+1000))
+
+const twoRacePromis = new Promise(resolve =>
+  setTimeout(() =>
+  resolve("Проигнорирует"),
+3000))
+
+Promise.race([oneRacePromis, twoRacePromis])
+.then((value) => {
+  console.log(value);
+})
+
