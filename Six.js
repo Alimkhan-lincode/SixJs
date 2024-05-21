@@ -194,3 +194,59 @@ Promise.race([oneRacePromis, twoRacePromis])
   console.log(value);
 })
 
+// 1. Создайте массив `numbers` с элементами `[1, 2, 3]`.
+// 2. Используйте деструктуризацию, чтобы создать три переменные `a`, `b` и `c` и присвоить им значения из массива `numbers`.
+// 3. Выведите переменные `a`, `b` и `c` в консоль.
+
+const number = [1,2,3];
+
+const[ a,b,c] = number
+console.log(a);
+console.log(b);
+console.log(c);
+
+// 1. Создайте объект `person` со свойствами `name`, `age` и `city`.
+// 2. Используйте деструктуризацию, чтобы создать переменные `name`, `age` и `city` и присвоить им значения из объекта `person`.
+// 3. Выведите переменные `name`, `age` и `city` в консоль.
+
+const person = {
+  namee: "Вася",
+  age: 25,
+  city: "Hollywood"
+}
+
+const {namee, age, city} = person
+console.log(namee);
+console.log(age);
+console.log(city);
+
+// 1. Создайте массив `letters` с элементами `['a', 'b', 'c', 'd', 'e']`.
+// 2. Используйте деструктуризацию, чтобы создать переменные `first`, `second` и `rest` и присвоить им значения из массива `letters`.
+// 3. Выведите переменные `first`, `second` и `rest` в консоль.
+
+const letters = ['a','b','c','d','e']
+const [first, second, ...rest] = letters
+
+console.log(first);
+console.log(second);
+console.log(...rest);
+
+// 1. Создайте объект `student` со свойствами `name`, `age` и `address`, где `address` является объектом с полями `city` и `country`.
+// 2. Используйте деструктуризацию, чтобы создать переменные `name`, `age`, `city` и `country`, присвоив им значения из объекта `student`.
+// 3. Выведите переменные `name`, `age`, `city` и `country` в консоль.
+
+const student = {
+  nameee: "Иван",
+  ageee: 20,
+  address: {
+    cityy: "Москва",
+    country: "Россия"
+  }
+};
+
+const { nameee, agee, address: { cityy, country } } = student;
+
+console.log(nameee);  
+console.log(age); 
+console.log(cityy);
+console.log(country); 
